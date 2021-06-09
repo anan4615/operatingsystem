@@ -15,8 +15,8 @@ ${Filepath}=  C:\\Users\\anan4615\\Documents\\UNIX\\logsample.txt
 ${text} =  INFO
 
 ${ORACLE DATABASE URL}           jdbc:oracle:thin:@edb-dev.int.colorado.edu:1521:eddev
-${ORACLE DATABASE USER}         ANAN4615
-${ORACLE DATABASE PASSWORD}     Colorado2020!
+${ORACLE DATABASE USER}         
+${ORACLE DATABASE PASSWORD}     
 ${ORACLE DATABASE DRIVER}       oracle.jdbc.driver.OracleDriver
 
 *** Test Cases ***
