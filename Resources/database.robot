@@ -9,13 +9,13 @@ Library   OperatingSystem
 *** Variables ***
 
 ${DBName}       dirsvcs
-${ORACLE DATABASE USER}        ANAN4615
-${ORACLE DATABASE PASSWORD}     Colorado2020!
+${ORACLE DATABASE USER}        
+${ORACLE DATABASE PASSWORD}     
 ${DBHost}       edb-dev.int.colorado.edu
 ${DBPort}       1521
 ${SID}          eddev
-#${DB_CONNECT_STRING}    jaydeapi     'oracle.jdbc.driver.OracleDriver',   'jdbc:oracle:thin:@edb-dev.int.colorado.edu:1521:eddev',    'ANAN4615',     'Colorado2020!'
-${DB_CONNECT_STRING}    'ANAN4615',     'Colorado2020!',     'edb-dev.int.colorado.edu:1521/eddev'
+
+${DB_CONNECT_STRING}    '',     '',     '
 *** Test Cases ***
 #Check record present in DB
 #    check if exists in database     select * from ISIS_STUDENTS where EMPLID = '000206000';
