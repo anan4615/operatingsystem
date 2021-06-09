@@ -4,9 +4,9 @@ Library     SSHLibrary
 
 *** Variables ***
 ${host}            edb-dev-old.int.colorado.edu
-${username}        anan4615
-${password}        J05hJay!23
-${ROOT_PASS}        Quality123!
+${username}        
+${password}        
+${ROOT_PASS}        
 
 *** Test Cases ***
 Test SSH Connection
