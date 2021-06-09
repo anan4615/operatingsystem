@@ -9,8 +9,8 @@ Library
 *** Variables ***
 
 ${DBName}       edb-dev.int.colorado.edu
-${DB_USERNAME}        ANAN4615
-${DB_PASSWORD}     Colorado2020!
+${DB_USERNAME}        
+${DB_PASSWORD}     
 ${DBHost}       edb-dev.int.colorado.edu
 ${DBPort}       1521
 *** Variables ***
