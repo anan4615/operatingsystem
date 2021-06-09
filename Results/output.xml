@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.6.5 on win32)" generated="20201006 15:20:38.092" rpa="false">
+<suite id="s1" name="Remotessh" source="C:\development\robot-scripts\logoperatingsystem\Resources\remotessh.robot">
+<test id="s1-t1" name="Test SSH Connection">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${host}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:38.238" endtime="20201006 15:20:38.238"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>delay=1</arg>
+</arguments>
+<msg timestamp="20201006 15:20:38.239" level="INFO">Logging into 'edb-dev-old.int.colorado.edu:22' as 'anan4615'.</msg>
+<msg timestamp="20201006 15:20:40.810" level="INFO">Read output: Last login: Tue Oct  6 15:18:55 2020 from cu-vpn-oit-ops-desktop-172.21.39.54.int.colorado.edu
+]
+] For assistance please mail trouble@colorado.edu
+]
+
+[anan4615@edb-dev-old ~]$</msg>
+<status status="PASS" starttime="20201006 15:20:38.239" endtime="20201006 15:20:40.810"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connected</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:40.812" endtime="20201006 15:20:40.813"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sudo su - diragnt</arg>
+</arguments>
+<msg timestamp="20201006 15:20:40.878" level="INFO">sudo su - diragnt</msg>
+<status status="PASS" starttime="20201006 15:20:40.814" endtime="20201006 15:20:40.878"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${ROOT_PASS}</arg>
+</arguments>
+<msg timestamp="20201006 15:20:40.950" level="INFO">Password for anan4615/sudo@AD.COLORADO.EDU:</msg>
+<status status="PASS" starttime="20201006 15:20:40.879" endtime="20201006 15:20:40.950"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>whoami</arg>
+</arguments>
+<msg timestamp="20201006 15:20:40.993" level="INFO">whoami</msg>
+<status status="PASS" starttime="20201006 15:20:40.950" endtime="20201006 15:20:40.993"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connected as diragnt</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:40.993" endtime="20201006 15:20:40.994"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>cd /data/edb/extracts</arg>
+</arguments>
+<msg timestamp="20201006 15:20:41.011" level="INFO">]</msg>
+<status status="PASS" starttime="20201006 15:20:40.994" endtime="20201006 15:20:41.011"></status>
+</kw>
+<kw name="List Directory" library="SSHLibrary">
+<doc>Returns and logs items in the remote ``path``, optionally filtered with ``pattern``.</doc>
+<arguments>
+<arg>/data/edb/extracts</arg>
+</arguments>
+<assign>
+<var>@{items}</var>
+</assign>
+<msg timestamp="20201006 15:20:41.157" level="INFO">[chan 1] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20201006 15:20:41.362" level="INFO">33 items:
+.camel
+2204_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060321.csv
+2207_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060741.csv
+2211_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060301.csv
+2214_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060441.csv
+ADB_ITS_PROV204_2020-09-16_160101.dat
+ALL_CSHR_MULT_CID.csv
+ARCHIVE
+COURSE.EXPORT.201.txt
+COURSE.EXPORT.201.txt.20190102
+COURSE.EXPORT.202.txt
+COURSE.EXPORT.203.txt
+CUBLD_FA20_ENROLLMENT.txt
+CUBLD_SU20_ENROLLMENT.txt
+ISR51A_Biodemo__2020-09-16-06.25.15.000000_.csv
+ISR51B_FA20__2020-09-16-06.14.37.000000.csv
+ISR51_C_Campus_2020-09-16.csv
+ISR51_C_Career_2020-09-16.csv
+ISR51_C_Class_2020-09-16.csv
+ISR51_C_Instructor_2020-09-16.csv
+ISR51_C_Plan_2020-09-16.csv
+ISR51_C_ProgStatus_2020-09-16.csv
+ISR51_C_Program_2020-09-16.csv
+ISR51_C_Session_2020-09-16.csv
+ISR51_C_Sessiondescription_2020-09-16.csv
+ISR51_C_Term_2020-09-16.csv
+SRB_ITS_PROV_2020-09-16-13.00.35.000000.dat
+isoexport.txt
+srb_clschd_2201.csv
+srb_clschd_2204.csv
+srb_clschd_2207.csv
+srb_clschd_2211.csv
+tmp</msg>
+<msg timestamp="20201006 15:20:41.363" level="INFO">@{items} = [ .camel | 2204_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060321.csv | 2207_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060741.csv | 2211_CU_ORIEN_DATA_LOAD_FULL_2020.09.17_060301.csv | 2214_CU_ORIEN_DATA_LOAD_FULL_2...</msg>
+<status status="PASS" starttime="20201006 15:20:41.012" endtime="20201006 15:20:41.363"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:41.364" endtime="20201006 15:20:41.364"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>vi ADB\t</arg>
+</arguments>
+<msg timestamp="20201006 15:20:41.441" level="INFO">] For assistance please mail trouble@colorado.edu</msg>
+<status status="PASS" starttime="20201006 15:20:41.365" endtime="20201006 15:20:41.441"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Success</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:41.441" endtime="20201006 15:20:41.442"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${vioutput}</var>
+</assign>
+<msg timestamp="20201006 15:20:41.443" level="INFO">]
+
+diragnt@edb-dev-old:~$ whoami
+diragnt
+diragnt@edb-dev-old:~$ cd /data/edb/extracts
+diragnt@edb-dev-old:/data/edb/extracts$ vi ADB_ITS_PROV204_2020-09-16_160101.dat  
+[?1h=[1;24r[m[m[0m[H[J[24;1H"ADB_ITS_PROV204_2020-09-16_160101.dat"</msg>
+<msg timestamp="20201006 15:20:41.443" level="INFO">${vioutput} = ]
+
+diragnt@edb-dev-old:~$ whoami
+diragnt
+diragnt@edb-dev-old:~$ cd /data/edb/extracts
+diragnt@edb-dev-old:/data/edb/extracts$ vi ADB_ITS_PROV204_2020-09-16_160101.dat  
+[?1h=[1;24r[m[m[0m...</msg>
+<status status="PASS" starttime="20201006 15:20:41.442" endtime="20201006 15:20:41.443"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${vioutput}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 15:20:41.443" endtime="20201006 15:20:41.444"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" starttime="20201006 15:20:41.444" endtime="20201006 15:20:41.445"></status>
+</kw>
+<status status="PASS" starttime="20201006 15:20:38.237" endtime="20201006 15:20:41.446" critical="yes"></status>
+</test>
+<doc>Robot Framework test script</doc>
+<status status="PASS" starttime="20201006 15:20:38.094" endtime="20201006 15:20:41.447"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Remotessh">Remotessh</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
